@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soul Candle — Earth Grounding | SantaiSoul Aromatherapy</title>
+  <meta name="description" content="Shop the SantaiSoul Earth Grounding candle. Botanical essential oils paired with an embedded NFC chip that unlocks high-end 432Hz ambient sound waves.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- --- NAVIGATION --- -->
+  <header>
+    <div class="container nav-container">
+      <a href="index.html" class="logo">SANTAI<span>SOUL</span></a>
+      
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="product.html" class="active">The Candle</a></li>
+          <li><a href="membership.html">Digital Sanctuary</a></li>
+          <li><a href="nfc-tap.html">NFC Simulator</a></li>
+        </ul>
+      </nav>
+      
+      <div class="nav-actions">
+        <button class="nav-action-btn" id="login-nav-btn" aria-label="Sanctuary Login">
+          <i class="fa-regular fa-user"></i>
+        </button>
+        <button class="nav-action-btn" id="cart-toggle" aria-label="Shopping Bag">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-count" style="display: none;">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- --- PRODUCT DETAILS --- -->
+  <main class="container" style="padding-top: 140px; padding-bottom: 80px;">
+    
+    <div style="margin-bottom: 2rem;">
+      <a href="index.html" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.6; display: flex; align-items: center; gap: 0.5rem;">
+        <i class="fa-solid fa-arrow-left"></i> Back to Collections
+      </a>
+    </div>
+
+    <div class="product-detail-grid">
+      <!-- Product Images Gallery -->
+      <div class="product-gallery">
+        <div class="product-gallery-main">
+          <img src="assets/images/hero.png" alt="Soul Candle Earth Grounding Main View" id="gallery-main-img">
+          <div class="nfc-badge-pill" style="font-size: 0.75rem; padding: 0.5rem 1rem;">
+            <i class="fa-solid fa-wifi"></i> NFC Active Chip Embedded
+          </div>
+        </div>
+        <div class="product-gallery-thumbs">
+          <div class="gallery-thumb active" onclick="changeProductImage('assets/images/hero.png', this)">
+            <img src="assets/images/hero.png" alt="Thumbnail 1">
+          </div>
+          <div class="gallery-thumb" onclick="changeProductImage('assets/images/hero.png', this)">
+            <img src="assets/images/hero.png" alt="Thumbnail 2" style="filter: sepia(50%) hue-rotate(30deg);">
+          </div>
+          <div class="gallery-thumb" onclick="changeProductImage('assets/images/hero.png', this)">
+            <img src="assets/images/hero.png" alt="Thumbnail 3" style="filter: grayscale(80%);">
+          </div>
+          <div class="gallery-thumb" onclick="changeProductImage('assets/images/hero.png', this)">
+            <img src="assets/images/hero.png" alt="Thumbnail 4" style="filter: brightness(80%) sepia(20%);">
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Specs and Action Details -->
+      <div class="product-specs">
+        <div class="product-meta-section">
+          <span class="hero-subtitle" style="margin-bottom: 0.5rem;">Signature aromatherapy series</span>
+          <h1 class="product-title-large">Soul Candle — Earth Grounding</h1>
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+            <div style="color: var(--color-gold-accent);">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <span style="font-size: 0.85rem; color: var(--color-text-muted);">(48 Verified Reviews)</span>
+          </div>
+          <p class="product-price-large">$48.00</p>
+        </div>
+
+        <div>
+          <p style="font-size: 1.05rem; color: var(--color-text-muted); margin-bottom: 2rem;">Formulated to quieten racing thoughts, lower cortisol levels, and anchor your spatial awareness. Deep scent profiles of damp forest moss, dry earthy vetiver, and smoky dark cedarwood blended thoroughly in natural coconut-soy wax. Embedded under the brass seal of the solid walnut lid resides our smart NFC microchip, instantly granting you a lifetime subscription to the Digital Sanctuary.</p>
+          
+          <div class="product-spec-row">
+            <span class="product-spec-label">Scent Notes</span>
+            <span class="product-spec-val">Wet Moss, Cedarwood, Earth Vetiver, Amberwood</span>
+          </div>
+          <div class="product-spec-row">
+            <span class="product-spec-label">Wick Type</span>
+            <span class="product-spec-val">Eco-friendly natural cotton, smoke-free burn</span>
+          </div>
+          <div class="product-spec-row">
+            <span class="product-spec-label">Burn Duration</span>
+            <span class="product-spec-val">60 Hours of sensory tranquility</span>
+          </div>
+          <div class="product-spec-row">
+            <span class="product-spec-label">Digital Gateway</span>
+            <span class="product-spec-val">Integrated NFC (No App required, Android/iOS ready)</span>
+          </div>
+        </div>
+
+        <!-- Cart Addition Controls -->
+        <div style="display: flex; gap: 1.5rem; align-items: center; margin-top: 1rem;">
+          <div class="qty-selector">
+            <button class="qty-btn" onclick="adjustProductQty(-1)">-</button>
+            <input type="number" id="product-qty-input" class="qty-input" value="1" min="1">
+            <button class="qty-btn" onclick="adjustProductQty(1)">+</button>
+          </div>
+          
+          <button onclick="addProductToCart()" class="btn-premium solid-green" style="flex-grow: 1;">Add To Sanctuary Bag</button>
+        </div>
+
+        <!-- Custom Interactive Tabs -->
+        <div style="margin-top: 2rem; border-top: 1px solid rgba(27, 59, 43, 0.08); padding-top: 1.5rem;">
+          <div style="display: flex; gap: 2rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(27, 59, 43, 0.05); padding-bottom: 0.5rem;">
+            <button class="tab-btn active" onclick="switchProductTab(0, this)" style="background:none; border:none; cursor:pointer; font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; color: var(--color-green-primary); padding-bottom: 0.5rem; border-bottom: 2px solid var(--color-green-primary);">Scent Profile</button>
+            <button class="tab-btn" onclick="switchProductTab(1, this)" style="background:none; border:none; cursor:pointer; font-weight: 500; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; color: var(--color-text-muted); padding-bottom: 0.5rem; border-bottom: 2px solid transparent;">NFC Integration</button>
+            <button class="tab-btn" onclick="switchProductTab(2, this)" style="background:none; border:none; cursor:pointer; font-weight: 500; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; color: var(--color-text-muted); padding-bottom: 0.5rem; border-bottom: 2px solid transparent;">Sustainability</button>
+          </div>
+          
+          <div id="tab-content" style="font-size: 0.95rem; color: var(--color-text-muted); min-height: 80px; line-height: 1.6;">
+            A deeply grounding blend designed to mimic the crisp, cool atmosphere of a Japanese cedar forest. Top notes of wet lichen and mountain ozone settle gently into mid notes of toasted vetiver root and warm cardamom, anchored firmly by rich, balsamic cedarwood.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- NFC STORYTELLING / INTERACTIVE PROCESS -->
+    <section class="section" style="margin-top: 80px; border-top: 1px solid rgba(27, 59, 43, 0.08); text-align: center;">
+      <span class="section-subtitle">How it Converges</span>
+      <h2 class="section-title" style="margin-bottom: 4rem;">The Digital Healing Connection</h2>
+      
+      <div class="product-showcase-grid" style="grid-template-columns: repeat(3, 1fr); gap: 3rem;">
+        <div style="padding: 2rem;">
+          <div style="width: 60px; height: 60px; border-radius: 50%; border: 1px solid var(--color-gold-accent); display:flex; align-items:center; justify-content:center; margin: 0 auto 1.5rem; font-size: 1.5rem; color: var(--color-gold-accent);">
+            <i class="fa-solid fa-fire-burner"></i>
+          </div>
+          <h3 style="font-family: var(--font-serif); font-size: 1.4rem; margin-bottom: 1rem;">1. Ignite Scent Note</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem;">Light your Soul Candle. As the natural coconut-soy wax slowly warms, organic scent notes of damp forest moss disperse, signaling sensory receptors to relax.</p>
+        </div>
+
+        <div style="padding: 2rem;">
+          <div style="width: 60px; height: 60px; border-radius: 50%; border: 1px solid var(--color-gold-accent); display:flex; align-items:center; justify-content:center; margin: 0 auto 1.5rem; font-size: 1.5rem; color: var(--color-gold-accent);">
+            <i class="fa-solid fa-nfc-symbol"></i>
+          </div>
+          <h3 style="font-family: var(--font-serif); font-size: 1.4rem; margin-bottom: 1rem;">2. Tap to Transmit</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem;">Hover your phone over the wooden lid. An automated encrypted payload activates in your browser instantly. No apps, no logins, no setups needed.</p>
+        </div>
+
+        <div style="padding: 2rem;">
+          <div style="width: 60px; height: 60px; border-radius: 50%; border: 1px solid var(--color-gold-accent); display:flex; align-items:center; justify-content:center; margin: 0 auto 1.5rem; font-size: 1.5rem; color: var(--color-gold-accent);">
+            <i class="fa-solid fa-spa"></i>
+          </div>
+          <h3 style="font-family: var(--font-serif); font-size: 1.4rem; margin-bottom: 1rem;">3. Immersive Sanctuary</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem;">Listen to customized 432Hz ambient frequencies generated in real-time by your web browser, paired with deep Pranayama breath pacing graphics.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- --- FOOTER --- -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand-col">
+        <a href="index.html" class="logo" style="color: var(--color-cream-primary);">SANTAI<span>SOUL</span></a>
+        <p>Luxury wellness start-up combining handcrafted botanical aromatherapy with premium immersive sensory technology.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="footer-social-link" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+          <a href="#" class="footer-social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Shop Collection</h4>
+        <ul class="footer-links">
+          <li><a href="product.html">The Signature Candle</a></li>
+          <li><a href="#">Aromatherapy Gift Boxes</a></li>
+          <li><a href="#">Botanical Essential Oils</a></li>
+          <li><a href="#">Solid Brass Scent Trays</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Digital Spaces</h4>
+        <ul class="footer-links">
+          <li><a href="membership.html">Private Sanctuary</a></li>
+          <li><a href="nfc-tap.html">NFC Tap Pairing Guide</a></li>
+          <li><a href="#">Soothing 432Hz Synth Audio</a></li>
+          <li><a href="#">Relaxation Breathing Swells</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-col-title">About & Support</h4>
+        <ul class="footer-links">
+          <li><a href="#">Our Botanical Story</a></li>
+          <li><a href="#">Sustainable Packaging</a></li>
+          <li><a href="#">B2B Luxury Amenities</a></li>
+          <li><a href="#">Contact Sanctuary Team</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 SantaiSoul International Ltd. Crafted for Global Citizens. All rights reserved.</p>
+      <div style="display: flex; gap: 2rem;">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Sanctuary</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- --- INTERACTIVE FLOATING AUDIO SYSTEM --- -->
+  <div class="ambient-glow-player" id="global-sound-toggle">
+    <div class="ambient-orb"></div>
+    <span class="ambient-text" id="global-sound-label">Soothing Sounds</span>
+  </div>
+
+  <!-- --- SIDE BAR SHOPPING DRAWER --- -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h3 class="cart-title">Your Sanctuary Bag</h3>
+      <button class="close-cart-btn" id="close-cart"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="cart-items-wrapper" id="cart-items-container">
+      <!-- Generated via JS -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-subtotal-row">
+        <span class="cart-subtotal-label">Subtotal</span>
+        <span class="cart-subtotal-price" id="cart-subtotal">$0.00</span>
+      </div>
+      <button class="btn-premium solid-green" id="checkout-btn" style="width: 100%; display: none;">Checkout with Stripe</button>
+    </div>
+  </div>
+
+  <!-- --- STRIPE CHECKOUT MODAL FRAME --- -->
+  <div class="stripe-checkout-modal" id="stripe-checkout-modal">
+    <div class="stripe-header">
+      <div class="stripe-brand">
+        <i class="fa-brands fa-stripe"></i> Stripe checkout
+      </div>
+      <button id="stripe-close" style="background:none; border:none; cursor:pointer; font-size:1.2rem;"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <form id="stripe-payment-form" class="stripe-body">
+      <div class="stripe-form-group">
+        <label class="stripe-form-label" for="stripe-email">Email Address</label>
+        <input type="email" id="stripe-email" class="stripe-input" placeholder="you@domain.com" required value="customer@globalwellness.com">
+      </div>
+      <div class="stripe-form-group">
+        <label class="stripe-form-label">Credit Card Details</label>
+        <div class="stripe-card-input-wrapper">
+          <i class="fa-regular fa-credit-card" style="color: #635bff;"></i>
+          <input type="text" class="stripe-input" placeholder="4242 4242 4242 4242" style="border:none; padding:0; flex-grow:1;" required value="4242 4242 4242 4242">
+          <input type="text" placeholder="MM/YY" style="border:none; padding:0; width:50px; text-align:center;" required value="12/28">
+          <input type="text" placeholder="CVC" style="border:none; padding:0; width:40px; text-align:center;" required value="123">
+        </div>
+      </div>
+      <div class="stripe-form-group">
+        <label class="stripe-form-label" for="stripe-name">Name on Card</label>
+        <input type="text" id="stripe-name" class="stripe-input" placeholder="Victor Masterpiece" required value="Victor Masterpiece">
+      </div>
+      <button type="submit" id="stripe-submit-btn" class="stripe-submit-btn">Pay Now</button>
+    </form>
+  </div>
+
+  <!-- --- MEMBERSTACK MODAL GATE --- -->
+  <div class="memberstack-modal" id="memberstack-modal">
+    <button class="ms-close-btn" id="ms-close"><i class="fa-solid fa-xmark"></i></button>
+    <div class="ms-header">
+      <h3 class="ms-logo" id="ms-modal-title">Join the <span>Sanctuary</span></h3>
+      <p class="ms-subtitle" id="ms-modal-subtitle">Sign up to unlock custom digital healing pathways, meditations, and sensory tracks.</p>
+    </div>
+    <form class="ms-form" id="ms-form">
+      <div class="ms-input-group" id="name-group">
+        <label class="ms-label" for="ms-name">Full Name</label>
+        <input type="text" id="ms-name" class="ms-input" placeholder="Victor Masterpiece" value="Victor Masterpiece">
+      </div>
+      <div class="ms-input-group">
+        <label class="ms-label" for="ms-email">Email Address</label>
+        <input type="email" id="ms-email" class="ms-input" placeholder="client@santaisoul.com" required value="client@santaisoul.com">
+      </div>
+      <div class="ms-input-group">
+        <label class="ms-label" for="ms-pass">Password</label>
+        <input type="password" id="ms-pass" class="ms-input" placeholder="••••••••" required value="comfortingscent432">
+      </div>
+      <button type="submit" id="ms-submit-btn" class="btn-premium solid-green" style="margin-top: 1rem; width:100%;">Begin Your Journey</button>
+    </form>
+    <p class="ms-footer-text" id="ms-switch-type">Already a member? <a href="#">Sign In</a></p>
+  </div>
+
+  <!-- JavaScript Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/audio.js"></script>
+
+  <script>
+    // Product Gallery Controller
+    function changeProductImage(src, element) {
+      document.getElementById('gallery-main-img').src = src;
+      
+      // Update filters on main image based on clicked thumbnail filters (to simulate multi angle shots)
+      const thumbImg = element.querySelector('img');
+      document.getElementById('gallery-main-img').style.filter = thumbImg.style.filter;
+
+      document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
+      element.classList.add('active');
+    }
+
+    // Product Quantity Adjuster
+    function adjustProductQty(change) {
+      const input = document.getElementById('product-qty-input');
+      let val = parseInt(input.value) + change;
+      if (val < 1) val = 1;
+      input.value = val;
+    }
+
+    function addProductToCart() {
+      const qty = parseInt(document.getElementById('product-qty-input').value);
+      addToCart('soul-candle', 'Soul Candle — Earth Grounding', 48.00, 'assets/images/hero.png', qty);
+    }
+
+    // Spec Tab Switcher
+    const tabs = [
+      "A deeply grounding blend designed to mimic the crisp, cool atmosphere of a Japanese cedar forest. Top notes of wet lichen and mountain ozone settle gently into mid notes of toasted vetiver root and warm cardamom, anchored firmly by rich, balsamic cedarwood.",
+      "Embedded seamlessly under the natural oil-sealed dark walnut lid is a high-grade passive NFC microchip. When tapped by modern iOS or Android phones, it securely directs your browser to open our Sanctuary gateway, auto-pairing with active 432Hz sound synthesizer waves.",
+      "Crafted with natural responsibility. Hand-poured in small batches using premium biodegradable coconut-soy wax, an organic cotton core wick, and reusable smoked violet glass tumblers. The packaging is created from 100% post-consumer recycled fiber and botanical inks."
+    ];
+
+    function switchProductTab(index, btnElement) {
+      document.getElementById('tab-content').textContent = tabs[index];
+      
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.style.color = "var(--color-text-muted)";
+        btn.style.borderColor = "transparent";
+      });
+
+      btnElement.classList.add('active');
+      btnElement.style.color = "var(--color-green-primary)";
+      btnElement.style.borderColor = "var(--color-green-primary)";
+    }
+  </script>
+</body>
+</html>

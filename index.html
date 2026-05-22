@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SantaiSoul — Luxury Aromatherapy & Digital Healing Sanctuary</title>
+  <meta name="description" content="SantaiSoul merges organic aromatherapy with premium digital healing. Experience handcrafted luxury candles paired with immersive NFC-enabled sonic soundscapes.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- --- PREMIUM NAVIGATION HEADER --- -->
+  <header>
+    <div class="container nav-container">
+      <a href="index.html" class="logo" id="site-logo">SANTAI<span>SOUL</span></a>
+      
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active" id="nav-home">Home</a></li>
+          <li><a href="product.html" id="nav-shop">The Candle</a></li>
+          <li><a href="membership.html" id="nav-sanctuary">Digital Sanctuary</a></li>
+          <li><a href="nfc-tap.html" id="nav-nfc">NFC Simulator</a></li>
+        </ul>
+      </nav>
+      
+      <div class="nav-actions">
+        <button class="nav-action-btn" id="login-nav-btn" aria-label="Sanctuary Login">
+          <i class="fa-regular fa-user"></i>
+        </button>
+        <button class="nav-action-btn" id="cart-toggle" aria-label="Shopping Bag">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-count" style="display: none;">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- --- HERO SECTION --- -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="hero-subtitle">The Future of Wellness</span>
+        <h1 class="hero-title">Aromatic Bliss meets <br><span class="gold-accent-text">Digital Healing</span>.</h1>
+        <p class="hero-desc">SantaiSoul redefines the concept of home fragrance. We merge handcrafted, luxury essential oil candles with embedded NFC tech that instantly pairs your physical space with personalized, premium healing frequencies.</p>
+        <div class="hero-actions">
+          <a href="product.html" class="btn-premium solid-green" id="hero-cta-primary">Explore The Candle</a>
+          <a href="membership.html" class="btn-premium outline-green" id="hero-cta-secondary">Enter Sanctuary</a>
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <div class="hero-image-container">
+          <img src="assets/images/hero.png" alt="SantaiSoul Luxury Aromatherapy & Healing Candle" id="hero-display-img">
+        </div>
+        <div class="hero-badge">
+          <div class="hero-badge-icon">
+            <i class="fa-solid fa-nfc-symbol"></i>
+          </div>
+          <div class="hero-badge-text">
+            <h4>NFC Active</h4>
+            <p>Tap to pair frequency</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- STORY & CONCEPT SECTION (AESOP AESTHETIC) --- -->
+  <section class="section container">
+    <div class="concept-grid">
+      <div class="concept-left">
+        <img src="assets/images/hero.png" alt="Minimalist wellness setup" style="filter: grayscale(20%) brightness(95%);">
+      </div>
+      <div class="concept-right">
+        <div class="section-title-wrapper">
+          <span class="section-subtitle">Intelligent Ambiance</span>
+          <h2 class="section-title">A Multi-Sensory Sanctuary for Modern Mindsets</h2>
+        </div>
+        
+        <div class="concept-card">
+          <div class="concept-num">01</div>
+          <div class="concept-body">
+            <h3>Hand-poured Botanical Aromatherapy</h3>
+            <p>Our candles are sustainably formulated from premium soy wax, natural cotton wicks, and pure essential oils sourced globally. No synthetic fragrances. No toxins.</p>
+          </div>
+        </div>
+
+        <div class="concept-card">
+          <div class="concept-num">02</div>
+          <div class="concept-body">
+            <h3>Embedded NFC Tech Gateway</h3>
+            <p>Hover your smartphone over the wood lid's brass crest to trigger an encrypted connection. Instantly load high-definition, immersive binaural soundscapes on your device.</p>
+          </div>
+        </div>
+
+        <div class="concept-card">
+          <div class="concept-num">03</div>
+          <div class="concept-body">
+            <h3>Curated Digital Healing Pathways</h3>
+            <p>From 432Hz grounding drones to slow guided meditation audio, our exclusive cloud sanctuary syncs seamlessly to your candle's scent notes to lower cortisol instantly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- E-COMMERCE / PRODUCTS PREVIEW SECTION --- -->
+  <section class="section" style="background-color: var(--color-cream-dark);">
+    <div class="container">
+      <div class="section-title-wrapper text-center" style="margin: 0 auto var(--spacing-lg);">
+        <span class="section-subtitle">Our Fragrant Collections</span>
+        <h2 class="section-title">Elevate Your Inner Resonance</h2>
+      </div>
+      
+      <div class="product-showcase-grid">
+        <!-- Core Candle Card -->
+        <div class="product-card">
+          <div class="product-card-img">
+            <img src="assets/images/hero.png" alt="Soul Candle - Grounding Moss" style="width: 80%; object-fit: contain;">
+            <div class="nfc-badge-pill">
+              <i class="fa-solid fa-wifi"></i> NFC Active
+            </div>
+          </div>
+          <div class="product-card-info">
+            <span class="product-card-cat">Signature Series</span>
+            <h3 class="product-card-title">Soul Candle — Earth Grounding</h3>
+            <p class="product-card-price">$48.00</p>
+          </div>
+          <div style="display: flex; gap: 1rem;">
+            <a href="product.html" class="btn-premium outline-green" style="flex-grow: 1; padding: 0.8rem 1rem;">View Details</a>
+            <button onclick="addToCart('soul-candle', 'Soul Candle — Earth Grounding', 48.00, 'assets/images/hero.png')" class="btn-premium solid-green" style="flex-grow: 1; padding: 0.8rem 1rem;">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Aromatherapy Item 2 -->
+        <div class="product-card">
+          <div class="product-card-img">
+            <img src="assets/images/hero.png" alt="Ether Candle - Calm lavender" style="width: 80%; object-fit: contain; filter: sepia(30%);">
+            <div class="nfc-badge-pill">
+              <i class="fa-solid fa-wifi"></i> NFC Active
+            </div>
+          </div>
+          <div class="product-card-info">
+            <span class="product-card-cat">Signature Series</span>
+            <h3 class="product-card-title">Ether Candle — Cosmic Calm</h3>
+            <p class="product-card-price">$48.00</p>
+          </div>
+          <div style="display: flex; gap: 1rem;">
+            <a href="product.html" class="btn-premium outline-green" style="flex-grow: 1; padding: 0.8rem 1rem;">View Details</a>
+            <button onclick="addToCart('ether-candle', 'Ether Candle — Cosmic Calm', 48.00, 'assets/images/hero.png')" class="btn-premium solid-green" style="flex-grow: 1; padding: 0.8rem 1rem;">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Aromatherapy Item 3 -->
+        <div class="product-card">
+          <div class="product-card-img">
+            <img src="assets/images/hero.png" alt="Aura Oil Set" style="width: 80%; object-fit: contain; filter: hue-rotate(90deg);">
+            <div class="nfc-badge-pill" style="background-color: var(--color-gold-accent); color: var(--color-green-dark);">
+              <i class="fa-solid fa-gem"></i> Premium
+            </div>
+          </div>
+          <div class="product-card-info">
+            <span class="product-card-cat">Aura Essentials</span>
+            <h3 class="product-card-title">Aura Healing Botanical Oils</h3>
+            <p class="product-card-price">$64.00</p>
+          </div>
+          <div style="display: flex; gap: 1rem;">
+            <a href="product.html" class="btn-premium outline-green" style="flex-grow: 1; padding: 0.8rem 1rem;">View Details</a>
+            <button onclick="addToCart('aura-oils', 'Aura Healing Botanical Oils', 64.00, 'assets/images/hero.png')" class="btn-premium solid-green" style="flex-grow: 1; padding: 0.8rem 1rem;">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- THE MEMBERSTACK GATED ECOSYSTEM BANNER --- -->
+  <section class="membership-cta">
+    <div class="container membership-cta-grid">
+      <div class="membership-cta-text">
+        <span class="section-subtitle" style="color: var(--color-gold-accent);">Memberstack Integration ready</span>
+        <h2>Unlock Your Premium Sanctuary</h2>
+        <p>Purchasing any SantaiSoul premium smart candle activates a lifetime digital healing membership. Log in to gain unrestricted web access to deep focus binaural brainwave modules, breathing trackers, and virtual aromatherapy logs.</p>
+        <button onclick="triggerMSModal('signup')" class="btn-premium solid-gold" id="membership-banner-cta">Create Sanctuary Account</button>
+      </div>
+      <div>
+        <ul class="membership-features-list">
+          <li class="membership-feat-item">
+            <div class="membership-feat-icon"><i class="fa-solid fa-music"></i></div>
+            <div class="membership-feat-desc">
+              <h4>Audio Synthesis Engine</h4>
+              <p>432Hz & 528Hz calming waves synthesized live inside your browser.</p>
+            </div>
+          </li>
+          <li class="membership-feat-item">
+            <div class="membership-feat-icon"><i class="fa-solid fa-brain"></i></div>
+            <div class="membership-feat-desc">
+              <h4>Pranayama Breathing Guide</h4>
+              <p>Visual pulsing ring coordinates deep inhales to balance cortisol.</p>
+            </div>
+          </li>
+          <li class="membership-feat-item">
+            <div class="membership-feat-icon"><i class="fa-solid fa-nfc-symbol"></i></div>
+            <div class="membership-feat-desc">
+              <h4>NFC Automation Gateway</h4>
+              <p>Instantly load tracks. No app installations, no subscriptions required.</p>
+            </div>
+          </li>
+          <li class="membership-feat-item">
+            <div class="membership-feat-icon"><i class="fa-solid fa-infinity"></i></div>
+            <div class="membership-feat-desc">
+              <h4>Perpetual Free Upgrades</h4>
+              <p>Exclusive updates to wellness guides and immersive audio libraries.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- SANTAISOUL JOURNAL & EDITORIAL (BLOG) --- -->
+  <section class="section" style="background-color: var(--color-cream-light); border-top: 1px solid rgba(27, 59, 43, 0.05); border-bottom: 1px solid rgba(27, 59, 43, 0.05);">
+    <div class="container">
+      <div class="section-title-wrapper text-center" style="margin: 0 auto var(--spacing-lg);">
+        <span class="section-subtitle">Mindful Editorial</span>
+        <h2 class="section-title">The SantaiSoul Journal</h2>
+        <p style="color: var(--color-text-muted); font-size: 0.95rem; max-width: 500px; margin: 1rem auto 0;">Explore the intersections of neuro-sensory wellness, botanical science, and ancient healing frequencies.</p>
+      </div>
+
+      <div class="product-showcase-grid" style="gap: 2.5rem;">
+        <!-- Journal Card 1 -->
+        <article style="display: flex; flex-direction: column; gap: 1rem; border-right: 1px solid rgba(27, 59, 43, 0.08); padding-right: 2rem;">
+          <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-gold-accent); font-weight: 600;">Sound Therapy &bull; 5 Min Read</span>
+          <h3 style="font-family: var(--font-serif); font-size: 1.8rem; line-height: 1.2;"><a href="#" style="color: var(--color-green-primary); transition: var(--transition-fast);">The Science of 432Hz: Tuning the Mind to Earth's Frequency</a></h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem; font-weight: 300;">Discover how slow-frequency ambient drones stabilize cardiac rhythm and lower baseline sympathetic nervous system responses during daily stress cycles.</p>
+          <a href="#" class="gold-accent-text" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-top: auto; display: flex; align-items: center; gap: 0.5rem;">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+
+        <!-- Journal Card 2 -->
+        <article style="display: flex; flex-direction: column; gap: 1rem; border-right: 1px solid rgba(27, 59, 43, 0.08); padding-right: 2rem;">
+          <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-gold-accent); font-weight: 600;">Aromatherapy &bull; 4 Min Read</span>
+          <h3 style="font-family: var(--font-serif); font-size: 1.8rem; line-height: 1.2;"><a href="#" style="color: var(--color-green-primary); transition: var(--transition-fast);">Earthy Aromas: Vetiver and Cedarwood as Cortisol Blockers</a></h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem; font-weight: 300;">An in-depth chemical breakdown of organic botanical terpene molecules and their direct pathways to activating deep relaxation receptors in the brain.</p>
+          <a href="#" class="gold-accent-text" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-top: auto; display: flex; align-items: center; gap: 0.5rem;">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+
+        <!-- Journal Card 3 -->
+        <article style="display: flex; flex-direction: column; gap: 1rem; padding-right: 2rem;">
+          <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-gold-accent); font-weight: 600;">Mindfulness &bull; 6 Min Read</span>
+          <h3 style="font-family: var(--font-serif); font-size: 1.8rem; line-height: 1.2;"><a href="#" style="color: var(--color-green-primary); transition: var(--transition-fast);">Designing a Quiet Space: The Ritual of Sensory Coherence</a></h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem; font-weight: 300;">Practical guidelines on utilizing lighting, minimalist design, botanical scents, and audio synthesis presets to create high-end sensory chambers at home.</p>
+          <a href="#" class="gold-accent-text" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-top: auto; display: flex; align-items: center; gap: 0.5rem;">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- AESTHETIC SOCIAL GRID (INSTAGRAM PREVIEW) --- -->
+  <section class="section" style="background-color: var(--color-cream-dark); padding-bottom: calc(var(--spacing-xl) / 1.5);">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: var(--spacing-md);">
+        <div>
+          <span class="section-subtitle">Visual Resonance</span>
+          <h2 class="section-title" style="font-size: 2.5rem;">Resonating on Socials</h2>
+        </div>
+        <a href="#" class="btn-premium outline-green" style="padding: 0.8rem 2rem; font-size: 0.75rem;">Follow @SantaiSoul</a>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
+        <!-- Social Post 1 -->
+        <div style="position: relative; overflow: hidden; height: 280px; border: 1px solid rgba(27, 59, 43, 0.05);">
+          <img src="assets/images/hero.png" alt="Social Post 1" style="width:100%; height:100%; object-fit:cover; filter: grayscale(10%) contrast(95%); transition: var(--transition-slow);">
+          <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(15, 33, 24, 0.4); opacity: 0; display:flex; align-items:center; justify-content:center; color: white; transition: var(--transition-fast); cursor:pointer;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0">
+            <span style="font-size: 0.85rem; text-transform:uppercase; letter-spacing:0.1em;"><i class="fa-brands fa-instagram"></i> View Post</span>
+          </div>
+        </div>
+
+        <!-- Social Post 2 -->
+        <div style="position: relative; overflow: hidden; height: 280px; border: 1px solid rgba(27, 59, 43, 0.05);">
+          <img src="assets/images/hero.png" alt="Social Post 2" style="width:100%; height:100%; object-fit:cover; filter: sepia(30%) contrast(90%); transition: var(--transition-slow);">
+          <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(15, 33, 24, 0.4); opacity: 0; display:flex; align-items:center; justify-content:center; color: white; transition: var(--transition-fast); cursor:pointer;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0">
+            <span style="font-size: 0.85rem; text-transform:uppercase; letter-spacing:0.1em;"><i class="fa-brands fa-instagram"></i> View Post</span>
+          </div>
+        </div>
+
+        <!-- Social Post 3 -->
+        <div style="position: relative; overflow: hidden; height: 280px; border: 1px solid rgba(27, 59, 43, 0.05);">
+          <img src="assets/images/hero.png" alt="Social Post 3" style="width:100%; height:100%; object-fit:cover; filter: brightness(90%) sepia(10%); transition: var(--transition-slow);">
+          <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(15, 33, 24, 0.4); opacity: 0; display:flex; align-items:center; justify-content:center; color: white; transition: var(--transition-fast); cursor:pointer;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0">
+            <span style="font-size: 0.85rem; text-transform:uppercase; letter-spacing:0.1em;"><i class="fa-brands fa-instagram"></i> View Post</span>
+          </div>
+        </div>
+
+        <!-- Social Post 4 -->
+        <div style="position: relative; overflow: hidden; height: 280px; border: 1px solid rgba(27, 59, 43, 0.05);">
+          <img src="assets/images/hero.png" alt="Social Post 4" style="width:100%; height:100%; object-fit:cover; filter: contrast(100%) grayscale(20%); transition: var(--transition-slow);">
+          <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(15, 33, 24, 0.4); opacity: 0; display:flex; align-items:center; justify-content:center; color: white; transition: var(--transition-fast); cursor:pointer;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0">
+            <span style="font-size: 0.85rem; text-transform:uppercase; letter-spacing:0.1em;"><i class="fa-brands fa-instagram"></i> View Post</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- REAL CUSTOMERS REVIEWS GRID --- -->
+  <section class="section container">
+    <div class="section-title-wrapper text-center" style="margin: 0 auto var(--spacing-lg);">
+      <span class="section-subtitle">Atmospheric Experiences</span>
+      <h2 class="section-title">Heard by Mindful Soles</h2>
+    </div>
+    
+    <div class="product-showcase-grid" style="grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+      <div style="background-color: var(--color-cream-light); border: 1px solid rgba(197, 168, 128, 0.15); padding: 2.5rem; text-align: left;">
+        <div style="color: var(--color-gold-accent); margin-bottom: 1rem;">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p style="font-style: italic; font-family: var(--font-serif); font-size: 1.2rem; line-height: 1.4; margin-bottom: 1.5rem; color: var(--color-green-primary);">"Merging the physical scent of moss and vetiver with the browser-based 432Hz sound synthesizer is pure genius. Instantly centers me after long executive meetings."</p>
+        <h4 style="font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em;">Alexandra K. — New York</h4>
+      </div>
+
+      <div style="background-color: var(--color-cream-light); border: 1px solid rgba(197, 168, 128, 0.15); padding: 2.5rem; text-align: left;">
+        <div style="color: var(--color-gold-accent); margin-bottom: 1rem;">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p style="font-style: italic; font-family: var(--font-serif); font-size: 1.2rem; line-height: 1.4; margin-bottom: 1.5rem; color: var(--color-green-primary);">"I tapped my candle with my iPhone and the Digital Sanctuary loaded instantly. The minimal interface feels extremely high-end, resembling Apple and Aesop."</p>
+        <h4 style="font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em;">Marcus T. — London</h4>
+      </div>
+
+      <div style="background-color: var(--color-cream-light); border: 1px solid rgba(197, 168, 128, 0.15); padding: 2.5rem; text-align: left;">
+        <div style="color: var(--color-gold-accent); margin-bottom: 1rem;">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p style="font-style: italic; font-family: var(--font-serif); font-size: 1.2rem; line-height: 1.4; margin-bottom: 1.5rem; color: var(--color-green-primary);">"An absolute sensory masterpiece. The warm wax blends smoothly with the real-time synthesized audio drone. Highly recommend to everyone who loves luxury self-care."</p>
+        <h4 style="font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em;">Elena R. — Tokyo</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- FOOTER --- -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand-col">
+        <a href="index.html" class="logo" style="color: var(--color-cream-primary);">SANTAI<span>SOUL</span></a>
+        <p>Luxury wellness start-up combining handcrafted botanical aromatherapy with premium immersive sensory technology.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="footer-social-link" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+          <a href="#" class="footer-social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Shop Collection</h4>
+        <ul class="footer-links">
+          <li><a href="product.html">The Signature Candle</a></li>
+          <li><a href="#">Aromatherapy Gift Boxes</a></li>
+          <li><a href="#">Botanical Essential Oils</a></li>
+          <li><a href="#">Solid Brass Scent Trays</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Digital Spaces</h4>
+        <ul class="footer-links">
+          <li><a href="membership.html">Private Sanctuary</a></li>
+          <li><a href="nfc-tap.html">NFC Tap Pairing Guide</a></li>
+          <li><a href="#">Soothing 432Hz Synth Audio</a></li>
+          <li><a href="#">Relaxation Breathing Swells</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-col-title">About & Support</h4>
+        <ul class="footer-links">
+          <li><a href="#">Our Botanical Story</a></li>
+          <li><a href="#">Sustainable Packaging</a></li>
+          <li><a href="#">B2B Luxury Amenities</a></li>
+          <li><a href="#">Contact Sanctuary Team</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 SantaiSoul International Ltd. Crafted for Global Citizens. All rights reserved.</p>
+      <div style="display: flex; gap: 2rem;">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Sanctuary</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- --- INTERACTIVE FLOATING AUDIO SYSTEM --- -->
+  <div class="ambient-glow-player" id="global-sound-toggle">
+    <div class="ambient-orb"></div>
+    <span class="ambient-text" id="global-sound-label">Soothing Sounds</span>
+  </div>
+
+  <!-- --- SIDE BAR SHOPPING DRAWER --- -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h3 class="cart-title">Your Sanctuary Bag</h3>
+      <button class="close-cart-btn" id="close-cart"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="cart-items-wrapper" id="cart-items-container">
+      <!-- Generated via JS -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-subtotal-row">
+        <span class="cart-subtotal-label">Subtotal</span>
+        <span class="cart-subtotal-price" id="cart-subtotal">$0.00</span>
+      </div>
+      <button class="btn-premium solid-green" id="checkout-btn" style="width: 100%; display: none;">Checkout with Stripe</button>
+    </div>
+  </div>
+
+  <!-- --- STRIPE CHECKOUT MODAL FRAME --- -->
+  <div class="stripe-checkout-modal" id="stripe-checkout-modal">
+    <div class="stripe-header">
+      <div class="stripe-brand">
+        <i class="fa-brands fa-stripe"></i> Stripe checkout
+      </div>
+      <button id="stripe-close" style="background:none; border:none; cursor:pointer; font-size:1.2rem;"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <form id="stripe-payment-form" class="stripe-body">
+      <div class="stripe-form-group">
+        <label class="stripe-form-label" for="stripe-email">Email Address</label>
+        <input type="email" id="stripe-email" class="stripe-input" placeholder="you@domain.com" required value="customer@globalwellness.com">
+      </div>
+      <div class="stripe-form-group">
+        <label class="stripe-form-label">Credit Card Details</label>
+        <div class="stripe-card-input-wrapper">
+          <i class="fa-regular fa-credit-card" style="color: #635bff;"></i>
+          <input type="text" class="stripe-input" placeholder="4242 4242 4242 4242" style="border:none; padding:0; flex-grow:1;" required value="4242 4242 4242 4242">
+          <input type="text" placeholder="MM/YY" style="border:none; padding:0; width:50px; text-align:center;" required value="12/28">
+          <input type="text" placeholder="CVC" style="border:none; padding:0; width:40px; text-align:center;" required value="123">
+        </div>
+      </div>
+      <div class="stripe-form-group">
+        <label class="stripe-form-label" for="stripe-name">Name on Card</label>
+        <input type="text" id="stripe-name" class="stripe-input" placeholder="Victor Masterpiece" required value="Victor Masterpiece">
+      </div>
+      <button type="submit" id="stripe-submit-btn" class="stripe-submit-btn">Pay Now</button>
+    </form>
+  </div>
+
+  <!-- --- MEMBERSTACK MODAL GATE --- -->
+  <div class="memberstack-modal" id="memberstack-modal">
+    <button class="ms-close-btn" id="ms-close"><i class="fa-solid fa-xmark"></i></button>
+    <div class="ms-header">
+      <h3 class="ms-logo" id="ms-modal-title">Join the <span>Sanctuary</span></h3>
+      <p class="ms-subtitle" id="ms-modal-subtitle">Sign up to unlock custom digital healing pathways, meditations, and sensory tracks.</p>
+    </div>
+    <form class="ms-form" id="ms-form">
+      <div class="ms-input-group" id="name-group">
+        <label class="ms-label" for="ms-name">Full Name</label>
+        <input type="text" id="ms-name" class="ms-input" placeholder="Victor Masterpiece" value="Victor Masterpiece">
+      </div>
+      <div class="ms-input-group">
+        <label class="ms-label" for="ms-email">Email Address</label>
+        <input type="email" id="ms-email" class="ms-input" placeholder="client@santaisoul.com" required value="client@santaisoul.com">
+      </div>
+      <div class="ms-input-group">
+        <label class="ms-label" for="ms-pass">Password</label>
+        <input type="password" id="ms-pass" class="ms-input" placeholder="••••••••" required value="comfortingscent432">
+      </div>
+      <button type="submit" id="ms-submit-btn" class="btn-premium solid-green" style="margin-top: 1rem; width:100%;">Begin Your Journey</button>
+    </form>
+    <p class="ms-footer-text" id="ms-switch-type">Already a member? <a href="#">Sign In</a></p>
+  </div>
+
+  <!-- JavaScript Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/audio.js"></script>
+</body>
+</html>

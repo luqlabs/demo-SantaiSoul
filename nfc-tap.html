@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NFC Smarthover Tap Simulator | SantaiSoul</title>
+  <meta name="description" content="Simulate tapping your SantaiSoul premium smart candle with your smartphone. Instantly unlock personalized soundscapes.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dark-mode" style="overflow: hidden;"> <!-- Clean dark screen for immersive simulation -->
+
+  <!-- --- NAVIGATION --- -->
+  <header>
+    <div class="container nav-container">
+      <a href="index.html" class="logo" style="color: var(--color-text-light);">SANTAI<span>SOUL</span></a>
+      
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" style="color: var(--color-text-light);">Home</a></li>
+          <li><a href="product.html" style="color: var(--color-text-light);">The Candle</a></li>
+          <li><a href="membership.html" style="color: var(--color-text-light);">Digital Sanctuary</a></li>
+          <li><a href="nfc-tap.html" class="active" style="color: var(--color-text-light);">NFC Simulator</a></li>
+        </ul>
+      </nav>
+      
+      <div class="nav-actions">
+        <button class="nav-action-btn" id="login-nav-btn" style="color: var(--color-text-light);"><i class="fa-regular fa-user"></i></button>
+        <button class="nav-action-btn" id="cart-toggle" style="color: var(--color-text-light);"><i class="fa-solid fa-bag-shopping"></i><span class="cart-count" style="display: none;">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- --- MAIN SIMULATOR WINDOW --- -->
+  <main class="nfc-tap-container">
+    
+    <div class="nfc-tap-card" id="nfc-simulator-card">
+      <div class="nfc-wave-ring" id="nfc-ring">
+        <i class="fa-solid fa-nfc-symbol nfc-logo-core" id="nfc-icon"></i>
+      </div>
+
+      <div style="margin-bottom: 2.5rem;">
+        <span class="hero-subtitle" style="display: inline-block; margin-bottom: 0.5rem; float:none; justify-content:center;">Ready to Align</span>
+        <h1 id="nfc-main-title" style="font-size: 2.5rem; margin-bottom: 1rem;">NFC Smart Tap Simulator</h1>
+        <p id="nfc-sub-desc" style="color: rgba(250, 246, 240, 0.6); max-width: 440px; margin: 0 auto; font-size: 0.95rem;">Tap the trigger button below to simulate hovering a smartphone over your handcrafted SantaiSoul Walnut wood lid.</p>
+      </div>
+
+      <button onclick="simulateNFCHover()" id="nfc-trigger-btn" class="btn-premium solid-gold" style="width: 100%; max-width: 320px;">Hover Smartphone</button>
+    </div>
+
+  </main>
+
+  <!-- --- SIDE BAR SHOPPING DRAWER (Required for global main.js imports) --- -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h3 class="cart-title">Your Sanctuary Bag</h3>
+      <button class="close-cart-btn" id="close-cart"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="cart-items-wrapper" id="cart-items-container"></div>
+    <div class="cart-footer">
+      <div class="cart-subtotal-row">
+        <span class="cart-subtotal-label">Subtotal</span>
+        <span class="cart-subtotal-price" id="cart-subtotal">$0.00</span>
+      </div>
+      <button class="btn-premium solid-green" id="checkout-btn" style="width: 100%; display: none;">Checkout with Stripe</button>
+    </div>
+  </div>
+
+  <!-- --- STRIPE CHECKOUT MODAL FRAME --- -->
+  <div class="stripe-checkout-modal" id="stripe-checkout-modal">
+    <div class="stripe-header">
+      <div class="stripe-brand"><i class="fa-brands fa-stripe"></i> Stripe checkout</div>
+      <button id="stripe-close" style="background:none; border:none; cursor:pointer; font-size:1.2rem;"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <form id="stripe-payment-form" class="stripe-body">
+      <div class="stripe-form-group">
+        <label class="stripe-form-label">Email Address</label>
+        <input type="email" class="stripe-input" required value="customer@globalwellness.com">
+      </div>
+      <div class="stripe-form-group">
+        <label class="stripe-form-label">Credit Card Details</label>
+        <div class="stripe-card-input-wrapper">
+          <i class="fa-regular fa-credit-card" style="color: #635bff;"></i>
+          <input type="text" class="stripe-input" required value="4242 4242 4242 4242" style="border:none; padding:0; flex-grow:1;">
+        </div>
+      </div>
+      <button type="submit" class="stripe-submit-btn">Pay Now</button>
+    </form>
+  </div>
+
+  <!-- --- MEMBERSTACK MODAL GATE --- -->
+  <div class="memberstack-modal" id="memberstack-modal">
+    <button class="ms-close-btn" id="ms-close"><i class="fa-solid fa-xmark"></i></button>
+    <div class="ms-header">
+      <h3 class="ms-logo" id="ms-modal-title">Join the <span>Sanctuary</span></h3>
+      <p class="ms-subtitle" id="ms-modal-subtitle">Sign up to unlock custom digital healing pathways.</p>
+    </div>
+    <form class="ms-form" id="ms-form">
+      <div class="ms-input-group">
+        <label class="ms-label">Email Address</label>
+        <input type="email" id="ms-email" class="ms-input" required value="client@santaisoul.com">
+      </div>
+      <button type="submit" class="btn-premium solid-green" style="width:100%;">Begin Your Journey</button>
+    </form>
+  </div>
+
+  <!-- JavaScript Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/audio.js"></script>
+
+  <script>
+    function simulateNFCHover() {
+      const btn = document.getElementById('nfc-trigger-btn');
+      const ring = document.getElementById('nfc-ring');
+      const icon = document.getElementById('nfc-icon');
+      const title = document.getElementById('nfc-main-title');
+      const desc = document.getElementById('nfc-sub-desc');
+
+      // 1. Disable button during simulation
+      btn.disabled = true;
+      btn.textContent = "Transmitting Payload...";
+      
+      // 2. Play soothing wind chime sound instantly to provide tactile audio feedback!
+      if (typeof healingSynth !== 'undefined') {
+        healingSynth.init();
+        if (healingSynth.ctx.state === 'suspended') {
+          healingSynth.ctx.resume();
+        }
+        healingSynth.triggerSingleChime();
+        setTimeout(() => healingSynth.triggerSingleChime(), 180);
+      }
+
+      // 3. Accelerate waves animation in CSS
+      ring.style.borderColor = "var(--color-text-light)";
+      icon.className = "fa-solid fa-sync fa-spin nfc-logo-core";
+
+      setTimeout(() => {
+        // 4. Update UI to Success checkmark
+        icon.className = "fa-solid fa-check nfc-logo-core";
+        icon.style.color = "#60c97e";
+        ring.style.borderColor = "#60c97e";
+        title.innerHTML = "Candle Connected <span style='color:#60c97e'>✨</span>";
+        desc.textContent = "ISO/IEC 14443A pairing successful. Encrypted token loaded. Bypassing sanctuary gate...";
+
+        // 5. Inject guest member access in localStorage
+        const nfcUser = {
+          name: "Mindful Explorer",
+          email: "nfc-tap@santaisoul.com",
+          premium: true,
+          pairedCandle: "Soul Candle — Earth Grounding"
+        };
+        localStorage.setItem('santaisoul_user', JSON.stringify(nfcUser));
+
+        // 6. Redirect to membership sanctuary dashboard after short pause
+        setTimeout(() => {
+          window.location.href = 'membership.html';
+        }, 1800);
+
+      }, 1500);
+    }
+  </script>
+</body>
+</html>
