@@ -11,6 +11,92 @@
   
   <!-- FontAwesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* --- SANCTUARY VERIFICATION OVERLAY --- */
+    #sanctuary-verify-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background-color: var(--color-charcoal-dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    #sanctuary-verify-overlay.fade-out {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .verify-ring {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 1px solid rgba(197, 168, 128, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .verify-ring::before {
+      content: '';
+      position: absolute;
+      inset: -12px;
+      border-radius: 50%;
+      border: 1px solid rgba(197, 168, 128, 0.12);
+      animation: nfcWaves 2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+    }
+    .verify-ring::after {
+      content: '';
+      position: absolute;
+      inset: -12px;
+      border-radius: 50%;
+      border: 1px solid rgba(197, 168, 128, 0.08);
+      animation: nfcWaves 2s cubic-bezier(0.16, 1, 0.3, 1) infinite 1s;
+    }
+    .verify-ring-core {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: var(--color-gold-accent);
+      animation: breathingOrbPulse 2s ease-in-out infinite;
+    }
+    .verify-label {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: rgba(250, 246, 240, 0.5);
+    }
+    .verify-status {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      color: var(--color-gold-accent);
+      min-height: 1.5rem;
+      transition: opacity 0.4s ease;
+    }
+    .verify-progress {
+      width: 180px;
+      height: 1px;
+      background: rgba(250, 246, 240, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+    .verify-progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, transparent, var(--color-gold-accent), transparent);
+      width: 0%;
+      animation: verifyProgress 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes verifyProgress {
+      0%   { width: 0%; }
+      60%  { width: 75%; }
+      85%  { width: 90%; }
+      100% { width: 100%; }
+    }
+  </style>
 </head>
 <body class="dark-mode"> <!-- Force cozy night mode for premium meditation vibes -->
 
@@ -39,6 +125,18 @@
       </div>
     </div>
   </header>
+
+  <!-- --- SANCTUARY VERIFICATION OVERLAY (always shown on load) --- -->
+  <div id="sanctuary-verify-overlay">
+    <span class="verify-label">SantaiSoul Sanctuary</span>
+    <div class="verify-ring">
+      <div class="verify-ring-core"></div>
+    </div>
+    <div class="verify-status" id="verify-status-text">Authenticating credentials...</div>
+    <div class="verify-progress">
+      <div class="verify-progress-bar"></div>
+    </div>
+  </div>
 
   <!-- --- MAIN GATEWAY CONTAINER --- -->
   <main class="container" style="padding-top: 140px; padding-bottom: 80px; min-height: 80vh;">
@@ -286,8 +384,36 @@
   <script>
     // Premium Dashboard Authentication Guard
     document.addEventListener('DOMContentLoaded', () => {
-      checkSanctuaryAuth();
+      runSanctuaryVerification();
     });
+
+    // Cinematic gate sequence — always runs regardless of auth state
+    function runSanctuaryVerification() {
+      const overlay = document.getElementById('sanctuary-verify-overlay');
+      const statusText = document.getElementById('verify-status-text');
+      const user = JSON.parse(localStorage.getItem('santaisoul_user'));
+
+      // Animate status messages for cinematic feel
+      const messages = [
+        { t: 0,    msg: 'Authenticating credentials...' },
+        { t: 700,  msg: 'Verifying candle ownership...' },
+        { t: 1400, msg: 'Decrypting sanctuary key...' },
+        { t: 2000, msg: user && user.premium ? 'Access granted ✦' : 'Credentials required.' },
+      ];
+
+      messages.forEach(({ t, msg }) => {
+        setTimeout(() => { statusText.textContent = msg; }, t);
+      });
+
+      // Fade out overlay then reveal correct view
+      setTimeout(() => {
+        overlay.classList.add('fade-out');
+        setTimeout(() => {
+          overlay.style.display = 'none';
+          checkSanctuaryAuth();
+        }, 800);
+      }, 2500);
+    }
 
     function checkSanctuaryAuth() {
       const user = JSON.parse(localStorage.getItem('santaisoul_user'));
@@ -300,7 +426,7 @@
 
         // Load personalized user details
         document.getElementById('user-welcome-title').textContent = `Welcome, ${user.name}`;
-        
+
         // Init initials badge
         const initials = user.name.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
         document.getElementById('user-initials').textContent = initials;
