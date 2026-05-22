@@ -60,16 +60,16 @@
         </div>
         <div class="product-gallery-thumbs">
           <div class="gallery-thumb active" onclick="changeProductImage('assets/images/hero.png', this)">
-            <img src="assets/images/hero.png" alt="Thumbnail 1">
+            <img src="assets/images/hero.png" alt="Candle — Hero Shot">
           </div>
-          <div class="gallery-thumb" onclick="changeProductImage('assets/images/hero.png', this)">
-            <img src="assets/images/hero.png" alt="Thumbnail 2" style="filter: sepia(50%) hue-rotate(30deg);">
+          <div class="gallery-thumb" onclick="changeProductImage('assets/images/product-1.png', this)">
+            <img src="assets/images/product-1.png" alt="Candle — Dark Matte Ceramic">
           </div>
-          <div class="gallery-thumb" onclick="changeProductImage('assets/images/hero.png', this)">
-            <img src="assets/images/hero.png" alt="Thumbnail 3" style="filter: grayscale(80%);">
+          <div class="gallery-thumb" onclick="changeProductImage('assets/images/product-2.png', this)">
+            <img src="assets/images/product-2.png" alt="Candle — Botanical Ingredients">
           </div>
-          <div class="gallery-thumb" onclick="changeProductImage('assets/images/hero.png', this)">
-            <img src="assets/images/hero.png" alt="Thumbnail 4" style="filter: brightness(80%) sepia(20%);">
+          <div class="gallery-thumb" onclick="changeProductImage('assets/images/product-3.png', this)">
+            <img src="assets/images/product-3.png" alt="Candle — Gift Set View">
           </div>
         </div>
       </div>
@@ -306,12 +306,13 @@
   <script>
     // Product Gallery Controller
     function changeProductImage(src, element) {
-      document.getElementById('gallery-main-img').src = src;
-      
-      // Update filters on main image based on clicked thumbnail filters (to simulate multi angle shots)
-      const thumbImg = element.querySelector('img');
-      document.getElementById('gallery-main-img').style.filter = thumbImg.style.filter;
-
+      const mainImg = document.getElementById('gallery-main-img');
+      mainImg.style.opacity = '0';
+      setTimeout(() => {
+        mainImg.src = src;
+        mainImg.style.filter = ''; // No more CSS filter hacks — real distinct images
+        mainImg.style.opacity = '1';
+      }, 180);
       document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
       element.classList.add('active');
     }
@@ -326,7 +327,7 @@
 
     function addProductToCart() {
       const qty = parseInt(document.getElementById('product-qty-input').value);
-      addToCart('soul-candle', 'Soul Candle — Earth Grounding', 48.00, 'assets/images/hero.png', qty);
+      addToCart('soul-candle', 'Soul Candle — Earth Grounding', 48.00, 'assets/images/product-1.png', qty);
     }
 
     // Spec Tab Switcher
